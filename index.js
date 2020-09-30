@@ -12,23 +12,127 @@ let banners = [
     }
 ]
 
+// Inserting 
+let showcase = [
+    {
+        "bairro": "Barra da Tijuca",
+        "cidade": "Rio de Janeiro",
+        "UF": "RJ",
+        "tipo": "Apartamento",
+        "metragem": "65",
+        "quartos": "2",
+        "vagas": "1",
+        "banheiros": "1",
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel1.jpg", 
+        "link": "#"
+    },
+    {
+        "bairro": "Leblon",
+        "cidade": "Rio de Janeiro",
+        "UF": "RJ",
+        "tipo": "Apartamento",
+        "metragem": "78",
+        "quartos": "3",
+        "vagas": "2",
+        "banheiros": "2",
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel2.jpg", 
+        "link": "#"
+    },
+    {
+        "bairro": "Recreio dos Bandeirantes",
+        "cidade": "Rio de Janeiro",
+        "UF": "RJ",
+        "tipo": "Apartamento",
+        "metragem": "85",
+        "quartos": "3",
+        "vagas": "2",
+        "banheiros": "3",
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel3.jpg", 
+        "link": "#"
+    },
+    {
+        "bairro": "Urca",
+        "cidade": "Rio de Janeiro",
+        "UF": "RJ",
+        "tipo": "Apartamento",
+        "metragem": "60",
+        "quartos": "2",
+        "vagas": "1",
+        "banheiros": "1",
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel4.jpg", 
+        "link": "#"
+    },
+    {
+        "bairro": "Barra da Tijuca",
+        "cidade": "Rio de Janeiro",
+        "UF": "RJ",
+        "tipo": "Apartamento",
+        "metragem": "74",
+        "quartos": "3",
+        "vagas": "1",
+        "banheiros": "2",
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel5.jpg", 
+        "link": "#"
+    },
+    {
+        "bairro": "Copacabana",
+        "cidade": "Rio de Janeiro",
+        "UF": "RJ",
+        "tipo": "Apartamento",
+        "metragem": "63",
+        "quartos": "2",
+        "vagas": "1",
+        "banheiros": "2",
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel6.jpg", 
+        "link": "#"
+    }
+]
+
 let counter = 0;
-let listImg;
+let listImgBanners;
+let listTitelsBanners;
 main = () => {
-    listImg = banners.map(item => {
+    listImgBanners = banners.map(item => {
         return(item.imagem)
     })
 
-    console.log(listImg)
-    carousel = () => {
-        
-        counter++
-        console.log(counter)
-        if (counter >= listImg.length){
+    listTitelsBanners = banners.map(item => {
+        return(item.titulo)
+    })
+
+    console.log(listImgBanners)
+    nextCarousel = () => {
+        if (counter == 0){
+            console.log(counter)
+            counter++
+            document.querySelector('#banner').setAttribute('src', listImgBanners[counter])
+            document.querySelector('#titleSlide').innerHTML = listTitelsBanners[counter]
+        }
+        else {
+            console.log(counter)
             counter = 0
+            document.querySelector('#banner').setAttribute('src', listImgBanners[counter])
+            document.querySelector('#titleSlide').innerHTML = listTitelsBanners[counter]
+        }
+    }
+
+    backCarousel = () => {
+        console.log(listImgBanners.length)
+        if (counter == 1){
+            console.log(counter)
+            counter--
+            document.querySelector('#banner').setAttribute('src', listImgBanners[counter])
+            document.querySelector('#titleSlide').innerHTML = listTitelsBanners[counter]
+        }
+        else {
+            console.log(counter)
+            counter = 1
+            document.querySelector('#banner').setAttribute('src', listImgBanners[counter])
+            document.querySelector('#titleSlide').innerHTML = listTitelsBanners[counter]
         }
     }
 }
+
 
 
 main()
@@ -131,10 +235,10 @@ main()
 
         start = () => {
             buildCarousel();
-            setInterval(carousel, 5000);
+            setInterval(nextCarousel, 5000);
         }
 
-        // start();
+        start();
 //     }
 
 //     myCarousel();

@@ -10,7 +10,7 @@ body {
 /* ---------------------------------------- Home ---------------------------------------- */
 .home {
     width: 80%;
-    height: 60vh;
+    height: 48vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 
 .header--box_logo {
@@ -46,15 +47,23 @@ body {
 }
 
 .container_menu--menu_iten {
-    /* color: #c1c3be */
     color: #000
+}
+:hover.container_menu--menu_iten {
+    color: red;
+    opacity: .8;
+    padding-top: .2rem;
+}
+
+a {
+    text-decoration: none;
 }
 
 .home--container_slide {
     z-index: 1;
     position: relative;
     width: 80%;
-    height: 50%;
+    height: 63%;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -63,6 +72,7 @@ body {
     border-radius: 5px;
     background-color: #c1c3be;
     padding: 20px 0px;
+    overflow: hidden;
 }
 
 .img_banner {
@@ -77,6 +87,7 @@ body {
     height: 30px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 :hover.arow {
     opacity: .5;
@@ -99,11 +110,16 @@ body {
     margin: 0px 0px 10px 0px;
 }
 
+.box_slide--title {
+    font-size: 2rem;
+    color: #fff;
+}
+
 .box_slide--btn {
     width: 20%;
     height: 7vh;
     font-size: 1rem;
-    background-color: grey;
+    background-color: #cfc6b7;
     border-radius: 5px;
     cursor: pointer;
     border: none;
@@ -111,23 +127,41 @@ body {
 }
 
 :hover.box_slide--btn {
-    width: 20.5%;
-    height: 7.5vh;
+    /* width: 20.5%;
+    height: 7.5vh; */
     background-color: #58655c;
     opacity: .9;
 }
 
-
-
-
-
-.container_slide--arow_left, .container_slide--arow_right {
-    cursor: pointer;
-    font-size: 2rem;
-    
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.immobile {
+    width: 80%;
+    /* height: 50vh; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: green; */
 }
 
-a {
-    text-decoration: none;
+.immobile--title {
+    font-size: 2rem;
+    margin: 30px 0px 10px 0;
+}
+
+.immobile--container_carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.container_carousel--item {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #58655c;
+    padding-top: 10px;
+}
+
+.item--img {
+    width: 90%;
 }
