@@ -1,11 +1,133 @@
-body{ 
-    
+body { 
+    /* width: 100%; */
+    display: flex;
+    align-items: center ;
+    flex-direction: column;
+    background-color: #5a7485;
+    padding-top: 20px;
 }
 
-section{ 
-    
+/* ---------------------------------------- Home ---------------------------------------- */
+.home {
+    width: 80%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color:#fff; */
 }
 
-a{
+.home--header {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header--box_logo {
+    width: 50%;
+    margin-bottom: 16px;
+    padding-left: 45px;
+}
+
+.header--menu_navegation {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_navegation--container_menu {
+    width: 83%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.container_menu--menu_iten {
+    /* color: #c1c3be */
+    color: #000
+}
+
+.home--container_slide {
+    z-index: 1;
+    position: relative;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: solid 1px ;
+    border-radius: 5px;
+    background-color: #c1c3be;
+    padding: 20px 0px;
+}
+
+.img_banner {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.arow {
+    z-index: 3;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+:hover.arow {
+    opacity: .5;
+}
+
+.container_slide--box_slide {
+    z-index: 2;
+    width: 88%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box_slide--list_itens {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0px 0px 10px 0px;
+}
+
+.box_slide--btn {
+    width: 20%;
+    height: 7vh;
+    font-size: 1rem;
+    background-color: grey;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+:hover.box_slide--btn {
+    width: 20.5%;
+    height: 7.5vh;
+    background-color: #58655c;
+    opacity: .9;
+}
+
+
+
+
+
+.container_slide--arow_left, .container_slide--arow_right {
+    cursor: pointer;
+    font-size: 2rem;
+    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a {
     text-decoration: none;
 }
