@@ -140,7 +140,7 @@ main = () => {
     }
     // Calling Altomatics Function
     start();
-
+    // console.log(document.querySelector('#containerCard'))
     loadShowcase = () => {
         // let carouselNeighborhoods = showcase.map(item => {
         //     return(item.bairro)
@@ -216,8 +216,6 @@ main = () => {
             amountThird.setAttribute("class", "third_box--amount")
             btnMore.setAttribute("class", "item--btn_more")
 
-
-
             cardDiv.appendChild(imgCard)
             cardDiv.appendChild(titleCard)
             cardDiv.appendChild(cardLocalDiv)
@@ -227,11 +225,12 @@ main = () => {
             console.log(cardDiv)
 
             console.log(document.querySelector("#containerCard"))
-            document.getElementById('containerCard').appendChild(cardShowcase) 
+            document.querySelector("#containerCard").appendChild(cardDiv) 
         })
 
     }
     loadShowcase();
+    
 }
 
 
