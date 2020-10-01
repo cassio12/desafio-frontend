@@ -12,7 +12,7 @@ let banners = [
     }
 ]
 
-// Inserting 
+// Inserting showcase
 let showcase = [
     {
         "bairro": "Barra da Tijuca",
@@ -88,159 +88,152 @@ let showcase = [
     }
 ]
 
-let counter = 0;
-let listImgBanners;
-let listTitelsBanners;
+
+
+// Main function
 main = () => {
-    listImgBanners = banners.map(item => {
+    let cardShowcase;
+    let counter = 0;
+
+    // Mapping banner images
+    let listImgsBanners = banners.map(item => {
         return(item.imagem)
     })
-
-    listTitelsBanners = banners.map(item => {
+    // Mapping banner titles
+    let listTitelsBanners = banners.map(item => {
         return(item.titulo)
     })
-
-    console.log(listImgBanners)
+    // Function to pass next banner
     nextCarousel = () => {
         if (counter == 0){
             console.log(counter)
             counter++
-            document.querySelector('#banner').setAttribute('src', listImgBanners[counter])
+            document.querySelector('#banner').setAttribute('src', listImgsBanners[counter])
             document.querySelector('#titleSlide').innerHTML = listTitelsBanners[counter]
         }
         else {
             console.log(counter)
             counter = 0
-            document.querySelector('#banner').setAttribute('src', listImgBanners[counter])
+            document.querySelector('#banner').setAttribute('src', listImgsBanners[counter])
             document.querySelector('#titleSlide').innerHTML = listTitelsBanners[counter]
         }
     }
-
+    // Function to return to the previous banner
     backCarousel = () => {
-        console.log(listImgBanners.length)
+        console.log(listImgsBanners.length)
         if (counter == 1){
             console.log(counter)
             counter--
-            document.querySelector('#banner').setAttribute('src', listImgBanners[counter])
+            document.querySelector('#banner').setAttribute('src', listImgsBanners[counter])
             document.querySelector('#titleSlide').innerHTML = listTitelsBanners[counter]
         }
         else {
             console.log(counter)
             counter = 1
-            document.querySelector('#banner').setAttribute('src', listImgBanners[counter])
+            document.querySelector('#banner').setAttribute('src', listImgsBanners[counter])
             document.querySelector('#titleSlide').innerHTML = listTitelsBanners[counter]
         }
     }
+    // Function to automate banner call
+    start = () => {
+        setInterval(nextCarousel, 5000);
+    }
+    // Calling Altomatics Function
+    start();
+
+    loadShowcase = () => {
+        // let carouselNeighborhoods = showcase.map(item => {
+        //     return(item.bairro)
+        // })
+        // let carouselCities = showcase.map(item => {
+        //     return(item.cidade)
+        // })
+        // let carouselUF = showcase.map(item => {
+        //     return(item.UF)
+        // })
+        // let carouselTypes = showcase.map(item => {
+        //     return(item.tipos)
+        // })
+        // let carouselFootage = showcase.map(item => {
+        //     return(item.metragem)
+        // })
+        // let carouselBedrooms = showcase.map(item => {
+        //     return(item.quartos)
+        // })
+        // let carouselVacancies = showcase.map(item => {
+        //     return(item.vagas)
+        // })
+        // let carouselBathrooms = showcase.map(item => {
+        //     return(item.banheiros)
+        // })
+        // let carouselImgs = showcase.map(item => {
+        //     return(item.capa)
+        // })
+
+        cardShowcase = showcase.map(item => {
+            let cardDiv = document.createElement('div')
+            let characteristicsDiv = document.createElement('div')
+            let characteristicsFirtDiv= document.createElement('div')
+            let characteristicsSecondDiv = document.createElement('div')
+            let characteristicsThirdDiv = document.createElement('div')
+            let cardLocalDiv = document.createElement('div')
+            let imgCard = document.createElement('img')
+            let iconDormitory = document.createElement('img')
+            let iconVacancies = document.createElement('img')
+            let iconFootage = document.createElement('img')
+            let titleCard = document.createElement('p')
+            let neighborhoods = document.createElement('p')
+            let UF = document.createElement('p')
+            let amountFirst = document.createElement('p')
+            let amountSecond = document.createElement('p')
+            let amountThird = document.createElement('p')
+            let btnMore = document.createElement('button')
+
+            let txtTitleCard = document.createTextNode(item.tipo)
+            let txtNeighborhoods = document.createElement('p')
+            let txtUF = document.createElement('p')
+            let txtAmountFirst = document.createElement('p')
+            let txtAmountSecond = document.createElement('p')
+            let txtAmountThird = document.createElement('p')
+
+            cardDiv.setAttribute("class", "container_carousel--item")
+            characteristicsDiv.setAttribute("class", "item--box_characteristics")
+            characteristicsFirtDiv.setAttribute("class", "box_characteristics--first_box")
+            characteristicsSecondDiv.setAttribute("class", "box_characteristics--second_box")
+            characteristicsThirdDiv.setAttribute("class", "box_characteristics--third_box")
+            cardLocalDiv.setAttribute("class", "item--box_local")
+            imgCard.setAttribute("class", "item--img")
+            imgCard.setAttribute("src", item.capa)
+            iconDormitory.setAttribute("class", "first_box--img")
+            iconVacancies.setAttribute("class", "second_box--img")
+            iconFootage.setAttribute("class", "third_box--img")
+            titleCard.setAttribute("class", "item--Type_immobile")
+            titleCard.appendChild(txtTitleCard)
+            neighborhoods.setAttribute("class", "box_local--neighborhoods")
+            UF.setAttribute("class", "box_local--UF")
+            amountFirst.setAttribute("class", "first_box--amount")
+            amountSecond.setAttribute("class", "second_box--amount")
+            amountThird.setAttribute("class", "third_box--amount")
+            btnMore.setAttribute("class", "item--btn_more")
+
+
+
+            cardDiv.appendChild(imgCard)
+            cardDiv.appendChild(titleCard)
+            cardDiv.appendChild(cardLocalDiv)
+            cardDiv.appendChild(characteristicsDiv)
+            cardDiv.appendChild(btnMore)
+
+            console.log(cardDiv)
+
+            console.log(document.querySelector("#containerCard"))
+            document.getElementById('containerCard').appendChild(cardShowcase) 
+        })
+
+    }
+    loadShowcase();
 }
 
 
-
-main()
-
-// Inserting banner slide function
-// (function() {
-    
-//     myCarousel = () =>{
-//         var carousel = {
-//             containerCarousel: document.querySelector('.box_slide--list_itens'),
-//             listCarousel: document.querySelectorAll('.box_slide--list_itens .list_itens--iten'),
-//             itemCarousel: [],
-//             countLeft: 0,
-//             countRight: 0,
-//             maxHeigth: 0,
-//             pagination: document.createElement('div')
-//         }
-        
-//         moveLeft = (array) => {
-//             let list = array
-//             // var left = document.querySelector('.container_slide--arow_left');
-//             // var center = document.querySelector('.center');
-//             // var right = document.querySelector('.container_slide--arow_right');
-            
-//             // left.innerHTML = carousel.itemCarousel[carousel.countLeft++];
-//             // if (carousel.countLeft === carousel.itemCarousel.length) carousel.countLeft = 0;
-            
-//             // carousel.countRight++;
-//             // if (carousel.countRight === carousel.itemCarousel.length) carousel.countRight = 0;
-            
-//             // center.className = 'left';
-//             // right.className = 'center';
-//             // left.className = 'right first';
-//         }
-//         console.log(moveLeft(banners.imagem))
-        
-//         moveRight = () => {
-            
-//             var left = carousel.containerCarousel.querySelector('.left');
-//             var center = carousel.containerCarousel.querySelector('.center');
-//             var right = carousel.containerCarousel.querySelector('.right');
-
-//             right.innerHTML = carousel.itemCarousel[carousel.countRight--];
-//             if (carousel.countRight == -1) carousel.countRight = carousel.itemCarousel.length - 1;
-
-//             carousel.countLeft--;
-//             if (carousel.countLeft === -1) carousel.countLeft = carousel.itemCarousel.length - 1;
-
-//             center.className = 'right';
-//             left.className = 'center';
-//             right.className = 'left first';
-//         }
-
-        buildCarousel = () => {
-
-            if (counter > 2) {
-                if (counter === 3) {
-                    carousel.countLeft = 0;
-                    carousel.countRight = 2;
-                } else {
-                    carousel.countLeft = 3;
-                    carousel.countRight = counter - 1;
-                }
-
-                for (var i = counter - 1; i >= 0; i--) {
-                    if (carousel.maxHeigth < carousel.listCarousel[i].offsetHeight) carousel.maxHeigth = carousel.listCarousel[i].offsetHeight;
-                    carousel.itemCarousel[i] = carousel.listCarousel[i].innerHTML;
-                    carousel.listCarousel[i].remove();
-                }
-
-                for (var j = 2; j >= 0; j--) {
-                    carousel.containerCarousel.appendChild(carousel.listCarousel[j]);
-                }
-                carousel.listCarousel[0].className = 'left';
-                carousel.listCarousel[1].className = 'center';
-                carousel.listCarousel[2].className = 'right';
-
-                carousel.containerCarousel.style.height = carousel.maxHeigth + 'px';
-
-                addPaginator();
-            }
-        }
-
-//         addPaginator = () => {
-//             var btnLeft = document.createElement('div'),
-//                 btnRight = document.createElement('div');
-
-//             btnLeft.className = 'btn';
-//             btnLeft.onclick = moveLeft;
-
-//             btnRight.onclick = moveRight;
-//             btnRight.className = 'btn';
-
-//             carousel.pagination.className = 'paginator';
-//             carousel.pagination.appendChild(btnLeft);
-//             carousel.pagination.appendChild(btnRight);
-
-//             carousel.containerCarousel.parentNode.appendChild(carousel.pagination);
-//         }
-
-        start = () => {
-            buildCarousel();
-            setInterval(nextCarousel, 5000);
-        }
-
-        start();
-//     }
-
-//     myCarousel();
-
-// // })();
+// Calling main function
+main();
