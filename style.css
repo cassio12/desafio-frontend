@@ -4,6 +4,7 @@ body {
     flex-direction: column;
     background-color: #5a7485;
     padding-top: 20px;
+    margin: 0;
 }
 
 /* ---------------------------------------- Home ---------------------------------------- */
@@ -151,15 +152,226 @@ a {
 }
 
 .container_carousel--item {
-    width: 23%;
+    width: 15%;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between  ;
     background-color: #58655c;
     padding-top: 10px;
     border-radius: 5px;
+    box-shadow: 0px 0px 24px -7px #000;
 }
 
 .item--img {
     width: 90%;
+}
+
+
+
+.item--Type_immobile{
+    margin: 5px 0 0 0;
+}
+
+.item--box_local {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.region {
+    font-size: .6rem;
+    margin: 0px 0px 10px 0;
+}
+
+.box_local--UF {
+    margin:0px 0 0px 2px;
+}
+
+
+
+.item--box_characteristics {
+    width: 78%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.iconBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+.icon {
+    width: 15px;
+}
+
+
+
+.item--btn_more {
+    width: 70%;
+    height: 10%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+:hover.item--btn_more {
+    opacity: .4;
+}
+
+.container_carousel--box_navegation {
+    width: 25%;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: red; */
+}
+
+.box_navegation--item {
+    width: 18px;
+    height: 40%;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fff;
+    margin-top: 35px;
+}
+:hover.box_navegation--item {
+    opacity: .4;
+}
+
+/* ---------------------------------------- Action section ---------------------------------------- */
+.action {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    box-shadow: 0px 0px 24px -7px #000;
+    background-color: rgb(116, 114, 133);
+}
+
+.action--box_action {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.box_action--btn {
+    width: 25%;
+    height: 40%;
+    border-radius: 5px;
+    border: solid .5px;
+    outline: none;
+    cursor: pointer;
+    background-color: #cfc6b7;
+    margin-right: 50px;
+}
+:hover.box_action--btn {
+    opacity: .4;
+}
+
+.box_action--text {
+    width: 56%;
+    font-size: 1.3rem;
+}
+
+/* ---------------------------------------- News ---------------------------------------- */
+.news {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 0 40px 0;
+}
+
+.news--title {
+    font-size: 2rem;
+    margin: 73px 0 20px 0;
+}
+
+.news--box_cardNews {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box_cardNews--card_item {
+    width: 23%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #58655c;
+    padding: 10px 0;
+    box-shadow: 0px 0px 24px -7px #000;
+}
+
+.box_cardNews--img_news {
+    width: 90%;
+}
+
+.box_cardNews--box_textCardNews {
+    width: 90%;
+}
+
+.box_textCardNews--title_news {
+    font-size: 1.1rem;
+}
+
+.box_textCardNews--txt_news {
+    font-size: .8rem;
+}
+
+.box_cardNews--box_btn {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.box_btn--btn_news {
+    width: 50%;
+    height: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+:hover.box_btn--btn_news {
+    opacity: .4;
+}
+
+.news--box_navegationCardNews {
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box_navegationCardNews--item {
+    width: 18px;
+    height: 17px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fff;
+    margin-top: 35px;
+}
+:hover.box_navegationCardNews--item {
+    opacity: .4;
 }

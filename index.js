@@ -88,6 +88,32 @@ let showcase = [
     }
 ]
 
+let news = [
+    {
+        "titulo": "Preço dos imóveis residenciais recua em setembro",
+        "sumario": "No acumulado do ano e em 12 meses, os valores seguem com avanço inferior à inflação.", 
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/noticias/noticia1.jpg",
+        "link": "#"
+    },
+    {
+        "titulo": "20% dos novos financiamentos de imóveis da Caixa já são pelo IPCA",
+        "sumario": "Lançada há um mês, modalidade é opcional e oferece juros de até 4,95% ao ano acrescidos da inflação no período.", 
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/noticias/noticia2.jpg", 
+        "link": "#"
+    },
+    {
+        "titulo": "Compra e venda de imóveis têm alta de quase 6%",
+        "sumario": "Entre julho do ano passado e junho de 2019, foram comprados e vendidos cerca de 613 mil imóveis no estado.", 
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/noticias/noticia3.jpg", 
+        "link": "#"
+    },
+    {
+        "titulo": "Risco de bolha imobiliária aumenta na zona do euro",
+        "sumario": "ela primeira vez em quatro anos, Londres não foi classificada como uma cidade com imóveis perigosamente sobrevalorizado.", 
+        "capa": "https://labs.inforcedata.com.br/desafio-frontend/noticias/noticia4.jpg", 
+        "link": "#"
+    }
+]
 
 
 // Main function
@@ -140,37 +166,13 @@ main = () => {
     }
     // Calling Altomatics Function
     start();
-    // console.log(document.querySelector('#containerCard'))
-    loadShowcase = () => {
-        // let carouselNeighborhoods = showcase.map(item => {
-        //     return(item.bairro)
-        // })
-        // let carouselCities = showcase.map(item => {
-        //     return(item.cidade)
-        // })
-        // let carouselUF = showcase.map(item => {
-        //     return(item.UF)
-        // })
-        // let carouselTypes = showcase.map(item => {
-        //     return(item.tipos)
-        // })
-        // let carouselFootage = showcase.map(item => {
-        //     return(item.metragem)
-        // })
-        // let carouselBedrooms = showcase.map(item => {
-        //     return(item.quartos)
-        // })
-        // let carouselVacancies = showcase.map(item => {
-        //     return(item.vagas)
-        // })
-        // let carouselBathrooms = showcase.map(item => {
-        //     return(item.banheiros)
-        // })
-        // let carouselImgs = showcase.map(item => {
-        //     return(item.capa)
-        // })
 
-        cardShowcase = showcase.map(item => {
+    // Function to load cards from the property showcase and navigation menu
+    loadShowcase = () => {
+        cardShowcase = showcase.map((item, index) => {
+            let pointerDiv = document.createElement('div')
+            pointerDiv.setAttribute("class", "box_navegation--item")
+
             let cardDiv = document.createElement('div')
             let characteristicsDiv = document.createElement('div')
             let characteristicsFirtDiv= document.createElement('div')
@@ -190,31 +192,60 @@ main = () => {
             let btnMore = document.createElement('button')
 
             let txtTitleCard = document.createTextNode(item.tipo)
-            let txtNeighborhoods = document.createElement('p')
-            let txtUF = document.createElement('p')
-            let txtAmountFirst = document.createElement('p')
-            let txtAmountSecond = document.createElement('p')
-            let txtAmountThird = document.createElement('p')
+            let txtNeighborhoods = document.createTextNode(item.bairro + " - ")
+            let txtUF = document.createTextNode(item.UF)
+            let txtAmountFirst = document.createTextNode(item.quartos)
+            let txtAmountSecond = document.createTextNode(item.vagas)
+            let txtAmountThird = document.createTextNode(item.metragem + " m²")
+            let txtBtnMore = document.createTextNode("Veja mais")
 
             cardDiv.setAttribute("class", "container_carousel--item")
             characteristicsDiv.setAttribute("class", "item--box_characteristics")
-            characteristicsFirtDiv.setAttribute("class", "box_characteristics--first_box")
-            characteristicsSecondDiv.setAttribute("class", "box_characteristics--second_box")
-            characteristicsThirdDiv.setAttribute("class", "box_characteristics--third_box")
+            characteristicsFirtDiv.setAttribute("class", "box_characteristics--first_box iconBox")
+            characteristicsSecondDiv.setAttribute("class", "box_characteristics--second_box iconBox")
+            characteristicsThirdDiv.setAttribute("class", "box_characteristics--third_box iconBox")
             cardLocalDiv.setAttribute("class", "item--box_local")
             imgCard.setAttribute("class", "item--img")
             imgCard.setAttribute("src", item.capa)
-            iconDormitory.setAttribute("class", "first_box--img")
-            iconVacancies.setAttribute("class", "second_box--img")
-            iconFootage.setAttribute("class", "third_box--img")
+            iconDormitory.setAttribute("class", "first_box--img icon")
+            iconDormitory.setAttribute("src", "./assets/bed.png")
+            iconVacancies.setAttribute("class", "second_box--img icon")
+            iconVacancies.setAttribute("src", "./assets/car.png")
+            iconFootage.setAttribute("class", "third_box--img icon")
+            iconFootage.setAttribute("src", "./assets/area.png")
             titleCard.setAttribute("class", "item--Type_immobile")
             titleCard.appendChild(txtTitleCard)
-            neighborhoods.setAttribute("class", "box_local--neighborhoods")
-            UF.setAttribute("class", "box_local--UF")
+            neighborhoods.setAttribute("class", "box_local--neighborhoods region")
+            UF.setAttribute("class", "box_local--UF region")
             amountFirst.setAttribute("class", "first_box--amount")
             amountSecond.setAttribute("class", "second_box--amount")
             amountThird.setAttribute("class", "third_box--amount")
             btnMore.setAttribute("class", "item--btn_more")
+
+            neighborhoods.appendChild(txtNeighborhoods)
+            UF.appendChild(txtUF)
+
+            amountFirst.appendChild(txtAmountFirst)
+            amountSecond.appendChild(txtAmountSecond)
+            amountThird.appendChild(txtAmountThird)
+
+            characteristicsFirtDiv.appendChild(iconDormitory)
+            characteristicsFirtDiv.appendChild(amountFirst)
+
+            characteristicsSecondDiv.appendChild(iconVacancies)
+            characteristicsSecondDiv.appendChild(amountSecond)
+
+            characteristicsThirdDiv.appendChild(iconFootage)
+            characteristicsThirdDiv.appendChild(amountThird)
+
+            characteristicsDiv.appendChild(characteristicsFirtDiv)
+            characteristicsDiv.appendChild(characteristicsSecondDiv)
+            characteristicsDiv.appendChild(characteristicsThirdDiv)
+
+            cardLocalDiv.appendChild(neighborhoods)
+            cardLocalDiv.appendChild(UF)
+
+            btnMore.appendChild(txtBtnMore)
 
             cardDiv.appendChild(imgCard)
             cardDiv.appendChild(titleCard)
@@ -222,15 +253,67 @@ main = () => {
             cardDiv.appendChild(characteristicsDiv)
             cardDiv.appendChild(btnMore)
 
-            console.log(cardDiv)
+            
+            document.querySelector("#boxPointer").appendChild(pointerDiv)
 
-            console.log(document.querySelector("#containerCard"))
             document.querySelector("#containerCard").appendChild(cardDiv) 
         })
+        // cardShowcase.pointerDiv.addEventListener("click", function(){
+        //     console.log("index",index)
+        //     console.log("item",item)
+        // })
 
+        console.log(cardShowcase)
     }
+    // Calling function loadShowcase
     loadShowcase();
-    
+
+    // Function for loading news cards
+    loadNews = () => {
+        news.map(item => {
+            let pointerDivNews = document.createElement('div')
+            pointerDivNews.setAttribute("class", "box_navegationCardNews--item")
+
+            let cardDivNew = document.createElement('div') 
+            let txtDivNew = document.createElement('div')
+            let btnDivNew = document.createElement('div')
+            let imgNew = document.createElement('img') 
+            let titleNew = document.createElement('p')
+            let paragraphNew = document.createElement('p')
+            let btnNew = document.createElement('button')
+
+            let txtBtnNew = document.createTextNode('Veja mais')
+            let txtParagraphNew = document.createTextNode(item.sumario)
+            let txtTitleNew = document.createTextNode(item.titulo)
+
+            cardDivNew.setAttribute("class", "box_cardNews--card_item")
+            txtDivNew.setAttribute("class", "box_cardNews--box_textCardNews")
+            btnDivNew.setAttribute("class", "box_cardNews--box_btn")
+            imgNew.setAttribute("class", "box_cardNews--img_news")
+            imgNew.setAttribute("src", item.capa)
+            titleNew.setAttribute("class", "box_textCardNews--title_news")
+            paragraphNew.setAttribute("class", "box_textCardNews--txt_news")
+            btnNew.setAttribute("class", "box_btn--btn_news")
+
+            btnNew.appendChild(txtBtnNew)
+            paragraphNew.appendChild(txtParagraphNew)
+            titleNew.appendChild(txtTitleNew)
+
+            btnDivNew.appendChild(btnNew)
+
+            txtDivNew.appendChild(titleNew)
+            txtDivNew.appendChild(paragraphNew)
+
+            cardDivNew.appendChild(imgNew)
+            cardDivNew.appendChild(txtDivNew)
+            cardDivNew.appendChild(btnDivNew)
+
+            document.querySelector("#boxNavegation").appendChild(pointerDivNews)
+            document.querySelector("#boxCard").appendChild(cardDivNew) 
+        })
+    }
+    // Calling function loadNews
+    loadNews();
 }
 
 
