@@ -4,14 +4,16 @@
         <meta charset="utf-8"/>
         <title>Font End Challenge</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./assets/font/font.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <section id="home" class="home">
             <header class="home--header">
                 <div class="header--box_logo">
-                    <img class="box_logo--logo" src="assets/logo_topo.webp">
+                    <a href=""><img class="box_logo--logo" src="assets/logo_topo.webp"></a>
                 </div>
-                <nav class="header--menu_navegation">
+                <nav class="header--menu_navegation" role="navigation">
                     <ul class="menu_navegation--container_menu">
                         <a href="#home"><li class="container_menu--menu_iten">Home</li></a>
                         <a href="#immobile"><li class="container_menu--menu_iten">Imóvel</li></a>
@@ -19,6 +21,21 @@
                         <a href="#mostAccessed"><li class="container_menu--menu_iten">Populares</li></a>
                         <a href="#local"><li class="container_menu--menu_iten">Local</li></a>
                     </ul>
+                    <div id="menuToggle">
+                        <input type="checkbox" />
+                        <div class="box_span">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <ul id="menu">
+                          <a href="#home"><li>Home</li></a>
+                          <a href="#immobile"><li>Imóvel</li></a>
+                          <a href="#news"><li>Notícias</li></a>
+                          <a href="#mostAccessed"><li>Populares</li></a>
+                          <a href="#local"><li>Local</li></a>
+                        </ul>
+                    </div>
                 </nav>
             </header>
             <div class="home--container_slide">
