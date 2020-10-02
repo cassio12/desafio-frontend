@@ -115,6 +115,37 @@ let news = [
     }
 ]
 
+let keyWords = [
+    {
+        "tag": "apartamentos na barra",
+        "link": "#"
+    },
+    {
+        "tag": "casas no recreio",
+        "link": "#"
+    },
+    {
+        "tag": "casa com 3 quartos",
+        "link": "#"
+    },
+    {
+        "tag": "barra da tijuca",
+        "link": "#"
+    },
+    {
+        "tag": "apartamento com 2 quartos",
+        "link": "#"
+    },
+    {
+        "tag": "casa na urca",
+        "link": "#"
+    },
+    {
+        "tag": "humaita",
+        "link": "#"
+    }
+]
+
 
 // Main function
 main = () => {
@@ -314,6 +345,19 @@ main = () => {
     }
     // Calling function loadNews
     loadNews();
+
+    loadTags = () => {
+        keyWords.map(item => {
+            let keyWord = document.createElement('p')
+            let txtKeyWord = document.createTextNode(item.tag)
+
+            keyWord.setAttribute("class", "box_hits--text")
+
+            keyWord.appendChild(txtKeyWord)
+            document.querySelector("#boxHits").appendChild(keyWord)
+        })
+    }
+    loadTags();
 }
 
 

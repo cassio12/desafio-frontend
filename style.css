@@ -17,7 +17,7 @@ body {
 }
 
 .home--header {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,20 +27,19 @@ body {
 .header--box_logo {
     width: 50%;
     margin-bottom: 16px;
-    padding-left: 45px;
 }
 
 .header--menu_navegation {
     width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .menu_navegation--container_menu {
-    width: 83%;
+    width: 70%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
     padding: 0;
 }
@@ -61,7 +60,7 @@ a {
 .home--container_slide {
     z-index: 1;
     position: relative;
-    width: 80%;
+    width: 100%;
     height: 63%;
     display: flex;
     align-items: center;
@@ -133,7 +132,7 @@ a {
 
 /* ---------------------------------------- Real estate showcase ---------------------------------------- */
 .immobile {
-    width: 80%;
+    width: 82%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -146,10 +145,18 @@ a {
 }
 
 .immobile--container_carousel {
+    height: 50vh;
     display: flex;
+    align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+/* {
+    position: absolute;
+    width: 18%;
+    height: 54%;
+} */
 
 .container_carousel--item {
     width: 15%;
@@ -358,7 +365,7 @@ a {
 }
 
 .news--box_navegationCardNews {
-    width: 15%;
+    width: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -374,4 +381,43 @@ a {
 }
 :hover.box_navegationCardNews--item {
     opacity: .4;
+}
+
+/* ---------------------------------------- Most accessed ---------------------------------------- */
+.most_accessed {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.most_accessed--title {
+    font-size: 2rem;
+}
+
+.most_accessed--box_hits {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.box_hits--text {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border: solid .2px #cfc6b7;
+    border-radius: 14px;
+    padding: 7px;
+    margin: 15px;
+    cursor: pointer;
+    color: #fff;
+}
+:hover.box_hits--text {
+    opacity: .6;
+    background-color: grey;
 }
