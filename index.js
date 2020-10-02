@@ -195,7 +195,7 @@ main = () => {
         setInterval(nextCarousel, 5000);
     }
     // Calling Altomatics Function
-    // start();
+    start();
 
     // Function to load cards from the property showcase and navigation menu
     loadShowcase = () => {
@@ -289,71 +289,6 @@ main = () => {
             document.querySelector("#boxPointer").appendChild(pointerDiv)
 
             document.querySelector("#containerCard").appendChild(cardDiv) 
-            
-            // pointerDiv.addEventListener("click", function(){
-            //     console.log("index",index)
-            //     console.log("item",item)
-            //     if(index === 0){
-            //         // console.log("igual")
-            //         // console.log(cardDiv.attributes.value)
-            //         cardDiv.setAttribute("class", "select_card");
-            //     }
-            //     else {
-            //         // console.log('diferente')
-            //         // console.log(cardDiv.attributes.value)
-            //         cardDiv.setAttribute("class", "container_carousel--item");
-            //         if(index === 1){
-            //             cardDiv.setAttribute("class", "select_card");
-            //         }
-            //         else {
-            //             cardDiv.setAttribute("class", "container_carousel--item");
-            //             if(index === 2){
-            //                 cardDiv.setAttribute("class", "select_card");
-            //             }
-            //             else {
-            //                 cardDiv.setAttribute("class", "container_carousel--item");
-            //                 if(index === 3){
-            //                     cardDiv.setAttribute("class", "select_card");
-            //                 }
-            //                 else {
-            //                     cardDiv.setAttribute("class", "container_carousel--item");
-            //                     if(index === 4){
-            //                         cardDiv.setAttribute("class", "select_card");
-            //                     }
-            //                     else {
-            //                         cardDiv.setAttribute("class", "container_carousel--item");
-            //                         if(index === 5){
-            //                             cardDiv.setAttribute("class", "select_card");
-            //                         }
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
-                // 
-                // switch(index) {
-                //     case 0:
-                //         return cardDiv.setAttribute("class", "select_card");
-                        
-                //     case 1: 
-                //         return cardDiv.setAttribute("class", "select_card");
-
-                //     case 2: 
-                //         return cardDiv.setAttribute("class", "select_card");
-
-                //     case 3: 
-                //         return cardDiv.setAttribute("class", "select_card");
-
-                //     case 4: 
-                //         return cardDiv.setAttribute("class", "select_card");
-
-                //     case 5: 
-                //         return cardDiv.setAttribute("class", "select_card");
-
-                // }
-            // })
-
-            // console.log(cardDiv.attributes.value)
         })
 
         // console.log(cardShowcase)

@@ -40,3 +40,10 @@ Deixamos a estilização do site a cargo do candidato, queremos que nos surpreen
 
 ## Entrega:
 O candidato deverá criar um fork deste projeto, e a partir deste fork, realizar o desenvolvimento. Favor utilizar o "Readme" do seu fork para descrever as dificuldades técnicas encontradas, como você as superou e, principalmente, como subir o projeto. Ao finalizar, você deverá responder ao e-mail que te enviou esse desafio, com o link do seu fork. 
+
+
+Minhas dificuldades:
+
+Em um curto espaço de tempo ter que executar o carrocel em JavaScript foi desafiador, provavelmente com mais tempo teria conseguido realizar esta funcionalidade.
+
+Uma pagina simples em Html, Css e JavaScript.  
