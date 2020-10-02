@@ -146,7 +146,6 @@ let keyWords = [
     }
 ]
 
-
 // Main function
 main = () => {
     let cardShowcase;
@@ -346,6 +345,7 @@ main = () => {
     // Calling function loadNews
     loadNews();
 
+    // Function to load the keywords
     loadTags = () => {
         keyWords.map(item => {
             let keyWord = document.createElement('p')
@@ -357,9 +357,9 @@ main = () => {
             document.querySelector("#boxHits").appendChild(keyWord)
         })
     }
+    // Calling function loadTags
     loadTags();
 }
-
 
 // Calling main function
 main();

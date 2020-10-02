@@ -14,9 +14,10 @@
                 <nav class="header--menu_navegation">
                     <ul class="menu_navegation--container_menu">
                         <a href="#home"><li class="container_menu--menu_iten">Home</li></a>
-                        <a href="#immobile"><li class="container_menu--menu_iten">Imovel</li></a>
-                        <a href="#services"><li class="container_menu--menu_iten">Serviços</li></a>
-                        <a href="#contactUs"><li class="container_menu--menu_iten">Fale Conosco</li></a>
+                        <a href="#immobile"><li class="container_menu--menu_iten">Imóvel</li></a>
+                        <a href="#news"><li class="container_menu--menu_iten">Notícias</li></a>
+                        <a href="#mostAccessed"><li class="container_menu--menu_iten">Populares</li></a>
+                        <a href="#local"><li class="container_menu--menu_iten">Local</li></a>
                     </ul>
                 </nav>
             </header>
@@ -41,15 +42,44 @@
                 <p class="box_action--text">Suspendisse lorem felis, pretium in maximus id, tempor non ipsum</p>
             </div>
         </section>
-        <section id="services" class="news">
+        <section id="news" class="news">
             <h1 class="news--title">Últimas noticias</h1>
             <div id="boxCard" class="news--box_cardNews"></div>
             <div id="boxNavegation" class="news--box_navegationCardNews"></div>
         </section>
-        <section id="contactUs" class="most_accessed">
+        <section id="mostAccessed" class="most_accessed">
             <h1 class="most_accessed--title">Mais Acessadas</h1>
             <div id="boxHits" class="most_accessed--box_hits"></div>
         </section>
+        <section id="local" class="location">
+            <h1 class="location--title">Localização</h1>
+            <div class="location--map_box">
+                <iframe class="map_box--item" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1544.7887186797038!2d-43.182396531444255!3d-22.944795410973693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd55430000043%3A0x80a3d333681bf603!2sABC%20Ag%C3%AAncia%20de%20Dom%C3%A9sticas%20e%20Bab%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1601601473595!5m2!1spt-BR!2sbr" 
+                    frameborder="0" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    aria-hidden="false" 
+                    tabindex="0"></iframe>
+            </div>
+        </section>
         <script src="index.js"></script>
     </body>
+    <footer id="footer" class="footer">
+        <div class="footer--container">
+            <img class="container--img_footer" src="assets/logo_footer.webp" />
+            <ul class="container--box_menuFooter">
+                <p class="box_menuFooter--title_menu">Footer menu</p>
+                <a href="#home"><li class="box_menuFooter--iten_list">Home</li></a>
+                <a href="#immobile"><li class="box_menuFooter--iten_list">Imóveis</li></a>
+                <a href="#news"><li class="box_menuFooter--iten_list">Notícias</li></a>
+            </ul>
+            <ul class="container--box_menuFooter">
+                <p class="box_menuFooter--title_menu">Footer menu</p>
+                <a href="#mostAccessed"><li class="box_menuFooter--iten_list">Populares</li></a>
+                <a href="#local"><li class="box_menuFooter--iten_list">Local</li></a>
+                <a href="#footer"><li class="box_menuFooter--iten_list">Footer</li></a>
+            </ul>
+        </div>
+    </footer>
 </html>
